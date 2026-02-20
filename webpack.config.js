@@ -7,7 +7,7 @@ export default {
   entry: "./src/entryPoint.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(import.meta.dirname, "dist"), // return directory path of dist as a string 
+    path: path.resolve(import.meta.dirname, "dist"), // return directory path of dist as a string
     clean: true, // clean outdated dist files
   },
   devtool: "eval-source-map", // otherwise the lines/files wont match up
@@ -16,10 +16,11 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/template.html", // search for src template file, then link the dist html with main.js 
+      template: "./src/template.html", // search for src template file, then link the dist html with main.js
     }),
   ],
-  module: { // for imports
+  module: {
+    // for imports
     rules: [
       {
         test: /\.css$/i,
